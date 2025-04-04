@@ -1,0 +1,41 @@
+# Java
+*.class
+*.jar
+*.war
+*.log
+
+# Maven
+target/
+
+# Gradle
+build/
+.gradle/
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.netbeans/
+
+# Arquivos sensíveis
+*.env
+*.pem
+*.key
+*.crt
+keys/
+application.properties
+application.yml
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
