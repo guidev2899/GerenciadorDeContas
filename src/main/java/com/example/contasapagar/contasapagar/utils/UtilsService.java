@@ -1,6 +1,8 @@
 package com.example.contasapagar.contasapagar.utils;
+import com.example.contasapagar.contasapagar.Dtos.ContaRequestDto;
 import com.example.contasapagar.contasapagar.Dtos.EnderecoDto.EnderecoRequestDto;
 import com.example.contasapagar.contasapagar.Dtos.UserDto.UserRegisterDto;
+import com.example.contasapagar.contasapagar.entities.ContasEntity;
 import com.example.contasapagar.contasapagar.entities.EnderecoEntity;
 import com.example.contasapagar.contasapagar.entities.UserEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,6 +26,14 @@ public class UtilsService {
         endereco.setNumero(dto.numero());
         endereco.setCep(dto.cep());
         return endereco;
+    }
+
+    public static ContasEntity fromContaEntity(ContaRequestDto contaRequestDto){
+        ContasEntity contasEntity = new ContasEntity();
+        contasEntity.setDescricao(contaRequestDto.descricao());
+        contasEntity.setValor(contaRequestDto.valor());
+        contasEntity.setData(contaRequestDto.data());
+        return contasEntity;
     }
 
 }

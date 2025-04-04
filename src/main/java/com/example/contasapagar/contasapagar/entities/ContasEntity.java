@@ -30,6 +30,8 @@ public class ContasEntity {
     @Column(nullable = false)
     private LocalDate data;
 
+    private Boolean status = Boolean.FALSE;
+
     private Instant criadoEm = Instant.now();
 
     @ManyToOne
@@ -84,6 +86,12 @@ public class ContasEntity {
         this.userEntity = userEntity;
     }
 
-    
-    
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 }

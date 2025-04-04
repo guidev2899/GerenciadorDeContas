@@ -9,6 +9,7 @@ import com.example.contasapagar.contasapagar.services.EnderecoService;
 import com.example.contasapagar.contasapagar.services.TokenService;
 import com.example.contasapagar.contasapagar.services.UserService;
 import com.example.contasapagar.contasapagar.utils.UtilsService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,7 @@ public class EnderecoController {
 
     @PostMapping("/register/endereco")
     public ResponseEntity<String> registerEnd(@RequestHeader("Authorization") String token,
-                                              @RequestBody EnderecoRequestDto dto){
+                                              @Valid @RequestBody EnderecoRequestDto dto){
         EnderecoEntity endereco = UtilsService.fromEnderecoEntity(dto);
         String accessToken = token.replace("Bearer ", "");
         String subject = tokenService.getSubject(accessToken);
