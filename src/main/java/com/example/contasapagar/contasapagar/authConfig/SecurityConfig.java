@@ -28,10 +28,10 @@ import java.security.interfaces.RSAPublicKey;
 @Configuration
 public class SecurityConfig {
 
-    @Value("${security.rsa.public-key}")
+    @Value("${jwt.public-key}")
     private RSAPublicKey publicKey;
 
-    @Value("${security.rsa.private-key}")
+    @Value("${jwt.private-key}")
     private RSAPrivateKey privateKey;
 
     @Bean

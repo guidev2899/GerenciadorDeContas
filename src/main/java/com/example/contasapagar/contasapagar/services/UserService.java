@@ -5,6 +5,7 @@ import com.example.contasapagar.contasapagar.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -18,6 +19,10 @@ public class UserService {
 
     public void createUser(UserEntity user){
         userRepository.save(user);
+    }
+
+    public Optional<UserEntity> getUserByEmail(String email){
+        return userRepository.findByemail(email);
     }
 
     public List<UserEntity> listarUsuarios(){
